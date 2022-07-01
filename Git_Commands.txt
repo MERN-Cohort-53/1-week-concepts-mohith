@@ -1,0 +1,117 @@
+git checkout -b <new-branch> - Create and checkout to the branch 
+git checkout <branchname> - switch to another branch 
+git fetch --all - Before switching into branch , we have to fetch everything first
+git push -u origin <branchname> - pushing to branching after switching into it
+git branch -m <new branchname> - Changing the branch name
+git clone -b <branch> <remote_repo> - to clone from a branch from a repo (Ex :git clone -b dev https://github.com/username/project.git)
+
+
+Error - The “fatal: refusing to merge unrelated histories” Git error
+problem  - The “fatal: refusing to merge unrelated histories” Git error occurs when two unrelated projects are merged (i.e., projects that are not aware of each other’s existence and have mismatching commit histories).
+Solution - The error is resolved by toggling the allow-unrelated-histories switch. After a git pull or git merge command, add the following   "git pull origin master --allow-unrelated-histories"
+
+
+git diff <branchname>- The <banchname> you want to merge to your current branch
+git merge <branchname> - The <banchname> you want to merge to your current branch
+git branch -d <branchname> - to delete the branch once its been merged
+git commit -am "" - adds and commits at the same time, but works only for modified files not the newly created file.
+
+git reset  - to remove things from staging area after add command before push.
+git HEAD~1 - To go one commit back, meaning the last commit made will be removed.
+
+git log - gives log of all the commit
+git reset <commitname> - it will erase the commit record after this commit, though there are no changes on code are made.It will unstage changes from git all the changes made after that commit  
+git reset --hard <commitname> - It will erase all the commits and changes to code after this commit.
+git branch -a = lists all the branches in local and remote
+
+# ignore a single file
+mycode.class
+
+# ignore an entire directory
+/mydebugdir/
+
+# ignore a file type
+*.json
+
+# add an exception (using !) to the preceding rule to track a specific file
+!package.json
+
+						--x--x--x--x--x--x--x--x--x--x--
+
+gitignore
+https://docs.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&tabs=visual-studio
+https://gist.github.com/tsrivishnu/a2f3adbbca9fcad5f3597af301ad1abb
+
+How can I ignore a file that is already committed to the repo
+* Add it to .gitignore: $ echo "config.py" >> .gitignore
+* Now tell git to not track this file by removing it from the index: $ git rm --cached config.py or git rm -r --cached (folder name)
+* Now, add .gitignore to index and commit:   $ git add .gitignore
+  					      $ git commit -m "Ignore config.py"
+  	
+ 						--x--x--x--x--x--x--x--x--x--x--			      
+
+
+
+
+https://www.atlassian.com/git/tutorials/saving-changes/gitignore#:~:text=If%20you%20want%20to%20ignore,directory%20as%20an%20ignored%20file.
+
+- https://www.youtube.com/watch?v=1ffBJ4sVUb4 (this link expalins the internal working of GIT)
+- https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html  (explained using diagrams)
+- https://youtu.be/HVsySz-h9r4
+- https://www.youtube.com/watch?v=hZznWbEGv1U - Master to main
+
+						--x--x--x--x--x--x--x--x--x--x--x--
+						
+Stashing
+https://www.atlassian.com/git/tutorials/saving-changes/git-stash
+https://jdhao.github.io/2019/12/03/git_stash_merge_conflict_handling/
+
+Sometimes, when we are working with our local changes in a Git repo, we may want to pull the latest updates from the remote repository. To avoid code conflict between remote files and local files. We can use git stash to store the unfinished local work temporarily.
+
+Git-stash gives you a clean repo and revert the repo state to last commit. Then we can use git pull to pull the updates.
+
+Git stash basic knowledge
+Stashed changes are per repository, not per branch.
+If you are in a certain branch and do a git stash, you may think that the stashed changes only belong to that branch. However, that is not the case. Since you have not committed the changes, they do not belong to any branch, even if you are currently working on a specific branch (see here).
+
+Show stashed changes
+To show stashed changes, use git stash list. It will show a list of stash you have made.
+
+Show the detailed info of a particular stash
+Each stash in the stash list can be referenced by its number. To show changes in a particular stash, we can use the following command:
+
+# show changes in the first stash
+git stash show stash@{0}
+The above command only shows summary changes to files in a stash. To show detailed changes of a stash, add the -p option:
+
+git stash show -p stash@{0}
+Applying git stash
+After the git-pull, we may want to continue our unfinished work. We can use git stash pop to restore unfinished work. You can also use git stash apply instead. The difference between git stash pop and git stash apply is that the former will drop the stash if there is no merge conflict, while the later will never drop the stash even if the stashed changes merge successfully with the pulled code.
+
+Anyway, if everything goes well, our unfinished changes can merge with the remote updates without any conflict. However, if we and other collaborator both have changed the same file at the same place, we will encounter merge errors after git-stash. The error message is like the following:
+
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+The stash entry is kept in case you need it again.
+Conflict markers
+When we open the conflict file, we will see some markers like the following:
+
+abc
+<<<<<<< Updated upstream
+qwe
+=======
+lmn
+>>>>>>> Stashed changes
+These markers are called conflict markers, which are used to indicate the conflicting changes made to a file.
+
+In the git-stash case, code between <<<<<<< and ======= are the changes made upstream, and code between ======= and >>>>>>> are your stashed changes.
+
+Merge conflict
+To merge the conflict, you have basically two methods:
+
+Resolve the conflict manually: decide if you want your change or the upstream change or you want to combine the local and remote change. Then edit the file accordingly and remove those conflict markers.
+Resolve the conflict with mergetools. See here for an introduction.
+Mark conflict as resolved
+After resolving the conflict, you can use git add to mark the conflict as resolved. But in the git-stash scenario, you may not want to do this since your changes are not finished yet.
+
+Or you can use git reset to mark that the conflict has been solved. You can continue working on your project until your changes are completed, and then commit your changes.
