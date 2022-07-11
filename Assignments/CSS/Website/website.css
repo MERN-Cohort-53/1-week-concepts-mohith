@@ -1,0 +1,96 @@
+body{
+    width: 100%;
+}
+
+.my_header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(108, 136, 96);
+    color: wheat;
+    padding: 5px;
+}
+
+.my_header button{
+    padding:10px;
+    margin: 30px;
+    background-color: tomato;
+    color: white;
+}
+
+.navbar{
+    text-align: center;
+    font-size: 30px;
+    background-color: wheat;
+    /* word-spacing: 20px; */
+    padding:10px;
+  
+}
+
+.navbar a{
+    color: brown;
+    text-decoration: none;
+    padding-right:20px;
+    
+}
+
+.showcase{
+    background-image: url(/Images/grapes-2000.jpg);
+    height:200px;
+    background-position: center;
+    margin-top:0px;
+    padding:30px 120px;
+    color: aliceblue;
+    text-align: center;
+    width: 1035px;
+
+}
+
+.main-body{
+    display: grid;
+    grid-template-columns: 900px 250px;
+    margin-top:30px;
+    column-gap:80px;
+    width: 100%;
+}
+
+.main-body .right{
+    background-color: rgb(108, 136, 96);
+    padding:20px;
+    color:wheat;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgb(108, 136, 96);
+    padding:40px;
+    margin-top:80px;
+    color:wheat;
+    margin-bottom: 0px;
+}
+.register-form .form{
+    display: flex;
+    justify-content: flex-start;
+}
+.register-form label{
+    font-weight: bold;
+    font-size: 15px;
+}
+.register-form input{
+    border-radius: 10px;
+    width: 220px;
+    height: 20px;
+    border: 1px solid black;
+}
+.register-form button{
+    padding:10px;
+    margin: 30px;
+    background-color: tomato;
+    color: white;
+    border-radius: 20px;
+}
+
+
+
+
