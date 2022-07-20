@@ -1,0 +1,82 @@
+1. Use console.log() and escape characters to print the following pattern.
+1 1 1 1 1
+2 1 2 4 8
+3 1 3 9 27
+4 1 4 16 64
+5 1 5 25 125
+answer: let numbers = "1 1 1 1 1\n2 1 2 4 8\n3 1 3 9 27\n4 1 4 16 64\n5 1 5 25 125"
+        console.log(numbers)
+
+
+2. Use substr to slice out the phrase because because because from the following sentence:'You cannot end a sentence with because because because is a conjunction'
+answer: let sentance = 'You cannot end a sentence with because because because is a conjunction'
+                        console.log(sentance.substring(0,30) ,sentance.substring(51,71))
+
+                      
+
+3. Write a program that asks the user to enter the width and length of a room. Once the values have been read,
+   your program should compute and display the area of the room. The length and the width will be entered as numbers.
+   Include units in your output message; either feet or meters, depending on which unit you are more comfortable working with.
+answer: let Entry_1 = parseInt(prompt("Enter Length"))
+        let Entry_2 = parseInt(prompt("Enter Width"))
+        console.log("The area is:",(Entry_1*Entry_2),"metersqare")
+   
+
+4. Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+answer:let salary_monthly = 5000
+       let bonus_anually = 10000
+       let online_income_monthly = 15000
+       let salary_anually = salary_monthly*12
+       let online_income_anually = online_income_monthly*12
+       let total_income = salary_anually + bonus_anually + online_income_anually
+       console.log(total_income)
+
+
+5. Creat an array and execute the following
+* Slice out the first 3 items from the array
+answer: let numbers = [1,2,3,4,5,6]
+        numbers.shift()
+        numbers.shift()
+        numbers.shift()
+        console.log(numbers) 
+                   
+              OR
+
+        let numbers = [1,2,3,4,5,6]
+        numbers.splice(0,3)
+        console.log(numbers)
+
+* Slice out the last 3 items from the array
+answer: let numbers = [1,2,3,4,5,6]
+        numbers.splice(3,3)
+        console.log(numbers)
+
+
+6. In the following shopping cart add, remove, edit items
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+* add 'Meat' in the beginning of your shopping cart if it has not been already added
+answer: const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+        shoppingCart.unshift('Meat')
+        console.log(shoppingCart)
+
+* add Sugar at the end of you shopping cart if it has not been already added
+answer: const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+        shoppingCart.push('Sugar')
+        console.log(shoppingCart)
+* remove 'Honey' if you are allergic to honey
+answer: const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+        shoppingCart.splice(3,1)
+        console.log(shoppingCart)
+* modify Tea to 'Green Tea'
+answer: const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+        shoppingCart[2] = 'Green Tea'
+        console.log(shoppingCart)
+
+
+7. In the following shopping cart add, remove, edit items
+* Sort the array and find the min and max age
+* Find the median age(one middle item or two middle items divided by two)
+* Find the average age(all items divided by number of items)
+* Find the range of the ages(max minus min)
+* Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array
+
