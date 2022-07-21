@@ -80,3 +80,30 @@ answer: const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
 * Find the range of the ages(max minus min)
 * Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array
 
+8. A company decided to give a bonus of 5% to employees if his/her year of service is more than 5 years, Ask user for their salary and year of service and print the net bonus amount 
+answer:
+let salary = parseInt(prompt("Enter salary"))
+let yearOfService = parseInt(prompt("Enter number of years worked"))
+let bonus = salary*0.05
+let net = salary + bonus
+if(yearOfService>=5){
+ console.log(`Net bonus is ${net}`)
+}
+ else{
+  console.log(`Salary is ${salary}`)
+ }
+
+9. A shop will give 10% discount if the cost of purchased quantity is more than 1000, Ask user for quantity, assume one unit of quantity is costing 100
+   Print total cost for user.
+answer: 
+let quantity = parseInt(prompt("Enter Quantity"))
+let oneUnit = 100
+let pricePerQuantity = quantity*oneUnit
+let discount = pricePerQuantity/10
+let discountedPrice = pricePerQuantity - discount
+if (pricePerQuantity>=1000){
+  console.log(`Price is ${discountedPrice}`)
+}
+else{
+  console.log(`Price is ${pricePerQuantity}`)
+}
