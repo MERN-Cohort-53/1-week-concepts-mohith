@@ -1,0 +1,86 @@
+Functions Assignments
+1. Write a shutting down program:
+
+ # First, def a function, shut_down, that takes one argument s.
+ # Then, if the shut_down function receives an s equal to "yes",
+ # it should return "Shutting down" Alternatively, elif s is equal to "no",
+ # then the function should return "Shutdown aborted".
+ # Finally, if shut_down gets anything other than those inputs,
+ # the function should return "Sorry".'''
+
+answer:
+ function shut_down (s){
+   if(s == "yes"){
+    return "Shutting Down"
+   }
+   else if(s == "no"){
+     return "Shutdown Aborted"
+   }
+   else{
+     return "Sorry"
+   } 
+ }
+ console.log(shut_down("yes"))
+
+2.Write a function to get the largest number from a list.
+answer:
+
+function largestNum(arguments){
+  largest = 0
+  for(i=0; i<arguments.length; i++)
+   if(largest<arguments[i]){
+    largest = arguments[i]
+   }
+  return largest
+}
+console.log(largestNum([1,4,2,5,6,4]))
+
+
+Higher Order Function Assignment
+1.Filter 80s companies 
+  console.log('\nfilter 80s companies and finance')
+answer:
+
+  let eightysCompany = companies.filter(function(company) {
+    if ((company.start <= 1989 && company.end >= 1980) && (company.category === "Finance")){
+      return company
+    }
+  })
+  console.log("Eighties Company", eightysCompany)
+
+2.Get companies that lasted 10 years or more
+  console.log('\nfilter companies that lasted 10 years or more')
+answer:
+
+   let lastingMoreThanTenYears = companies.filter(function(company){
+    if ((company.end - company.start) >= 10){
+      return company
+    }
+   })
+   console.log("More than !0Years", lastingMoreThanTenYears)
+
+3.Given an array ages, create another array with squares of the values in ages
+answer:
+
+  const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32]
+  let square = ages.map(function(age){
+    let squareage = age*age
+    return squareage
+  })
+  console.log(square)
+
+ 4.Given an array ages, create another array with squareroots of the values in ages
+answer:
+
+  const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32]
+  let squareroot = ages.map(function(age){
+    let squarerootage = Math.sqrt(age)
+    return squarerootage
+  })
+  console.log(squareroot)
+
+5.wap to do the same thing as above but with arrow function 
+answer:
+
+  let totalYears = companies.reduce((total, company) => total + (company.end - company.start), 0)
+  console.log(totalYears)
