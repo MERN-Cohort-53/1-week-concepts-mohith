@@ -1,0 +1,60 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-image: url(images/galaxy.gif);
+}
+.main p{
+  color:wheat;
+  font-size: 50px;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 2px 3px 1px blue;
+}
+.main #form{
+  text-align: center;
+}
+.main #form #weight{
+  width: 250px;
+  height: 40px;
+  margin: 0 10px;
+}
+.main #form .planets{
+  width: 210px;
+  height: 40px;
+  margin: 0 10px;
+}
+.main #form .btn{
+  width: 130px;
+  height: 40px;
+  margin: 0 10px;
+  border-radius: 5px;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.main #form .btn:active{
+  background-color: white;
+  color: rgb(80, 80, 80);
+}
+.main .image_container{
+  margin: 40px 80px;
+  padding: 30px 90px;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: space-evenly;
+  align-items: center; 
+  background-color: rgba(73, 73, 73, 0.3);
+}
+.main .image_container .container{
+  height: 300px;
+  width: 300px;
+  border-style: none;
+}
+.main .image_container .text{
+  font-size: 30px;
+  color: white;
+  text-shadow: none;
+}
